@@ -4,7 +4,7 @@
     <div class="container mt-5">
         <h1 class='text-center'>Salut ajoute des articles juste ici poto !</h1>
 
-        <form action="add" method="POST">
+        <form  method="POST">
         {{ csrf_field() }}
             <div class="form-row">
                 <div class="col-6">

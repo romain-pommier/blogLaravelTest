@@ -34,9 +34,8 @@ Route::get('/addarticles',function () {
 
     return view('addArticles');
 });
-Route::get('/add',function () {
-    return redirect('home/dashboard');
+Route::post('/addarticles',function () {
 
-   
+    return dd(request());
 });
 
