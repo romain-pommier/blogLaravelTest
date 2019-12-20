@@ -1,7 +1,6 @@
 <?php
 
-use Faker\Factory;
-use Faker\Provider\DateTime;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,28 +13,18 @@ use Faker\Provider\DateTime;
 |
 */
 
-Route::get('/',function () {
-  return view('welcome');
-});
-Route::get('/articles',function () {
-    $faker = Faker\Factory::create();
-    $dataArticles = [];
-    $article = [];
-    for($i = 0; $i <= 20; $i++){
-        $article['picture'] = $faker->imageUrl($width = 640, $height = 480);
-        $article['content'] = $faker->text($maxNbChars = 200);
-        $article['word'] = $faker->word;
-        array_push($dataArticles,$article);
-    }
-    return view('articles',['dataArticles' => $dataArticles]);
-});
 
-Route::get('/addarticles',function () {
+Route::get('/',function () {return view('welcome');});
 
-    return view('addArticles');
-});
-Route::post('/addarticles',function () {
 
-    return dd(request());
-});
+
+//show section
+Route::get('/articles', 'ArticlesController@show',function () {});
+Route::get('/articles/{title}', 'ArticlesController@showArticle',function () {});
+
+
+//update section
+Route::get('/updateorcreatearticles/{id?}','ArticlesController@articleForm',function () {});
+Route::post('/updateorcreatearticles/{id?}','ArticlesController@createOrUpdate',function () {});
+
 
