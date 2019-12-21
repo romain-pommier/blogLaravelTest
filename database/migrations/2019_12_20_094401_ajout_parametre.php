@@ -13,10 +13,11 @@ class AjoutParametre extends Migration
      */
     public function up()
     {
-        Schema::table('Article', function (Blueprint $table) {
+        Schema::table('articles', function (Blueprint $table) {
             $table->string('title');
             $table->string('picture');
             $table->longText('content');
+
 
         });
     }
@@ -28,7 +29,7 @@ class AjoutParametre extends Migration
      */
     public function down()
     {
-        Schema::table('Article', function (Blueprint $table) {
+        Schema::table('articles', function (Blueprint $table) {
             //
         });
     }

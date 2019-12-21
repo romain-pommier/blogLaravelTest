@@ -28,3 +28,8 @@ Route::get('/updateorcreatearticles/{id?}','ArticlesController@articleForm',func
 Route::post('/updateorcreatearticles/{id?}','ArticlesController@createOrUpdate',function () {});
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

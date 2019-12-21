@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $faker = \Faker\Factory::create();
+//        for($i = 0; $i <= 15; $i++){
+//            $nbrArticles = random_int ( 2 , 8 );
+//
+//        }
+
         for($i = 0; $i <= 20; $i++){
             $title = $faker->word;
             $picture = $faker->imageUrl($width = 640, $height = 480);

@@ -30,8 +30,15 @@
                         <a class="nav-link" href="articles">Articles</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link">Connexion</a>
+                    </li>
+
+                </ul>
             </div>
         </nav>
+
         
 @include('flash::message')
         @yield('content')
