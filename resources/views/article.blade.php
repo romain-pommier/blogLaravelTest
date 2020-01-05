@@ -10,5 +10,6 @@
         <p class="col-6">{{$article->content}}</p>
         </div>
         <a href="../updateorcreatearticles/{{$article->title}}" class="btn btn-success mt-3">Modifier</a>
+        <p>Créer par <strong>{{$user->name}}</strong> </p>
     </div>
 @endsection;

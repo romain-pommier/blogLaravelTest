@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('content')
-
+{{--{{dump($test)}}--}}
 
     <div class="container mt-5">
         <h1 class='text-center'>Salut ajoute des articles juste ici poto !</h1>

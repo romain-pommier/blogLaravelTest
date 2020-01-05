@@ -17,6 +17,7 @@ class AjoutParametre extends Migration
             $table->string('title');
             $table->string('picture');
             $table->longText('content');
+            $table->string('id_user');
 
 
         });

@@ -19,18 +19,37 @@ class DatabaseSeeder extends Seeder
 //            $nbrArticles = random_int ( 2 , 8 );
 //
 //        }
+        for($i =0; $i <= 9; $i++){
+            $username = $faker->userName;
+            $userMail = $faker->freeEmail;
+            $password = '12345678';
+            $updateTime  = $faker->date($format = 'Y-m-d', $max = 'now').' '.$faker->time($format = 'H:i:s', $max = 'now');
+            dump($username . ' ' .$userMail.' '.$password.' '.$updateTime);
 
-        for($i = 0; $i <= 20; $i++){
-            $title = $faker->word;
-            $picture = $faker->imageUrl($width = 640, $height = 480);
-            $content = $faker->text($maxNbChars = 200);
-           
-            DB::table('articles')->insert([
-                'title' => $title,
-                'picture' => $picture,
-                'content' => $content,
+            $created_at = $updateTime;
+            DB::table('users')->insert([
+                'name' => $username,
+                'email' => $userMail,
+                'password' => $password,
+                'updated_at' =>$updateTime,
+                'created_at' => $created_at,
             ]);
+            $nombreRandom = mt_rand(0, 5);
+            for($y = 0; $y <= $nombreRandom; $y++){
+                $title = $faker->word;
+                $picture = $faker->imageUrl($width = 640, $height = 480);
+                $content = $faker->text($maxNbChars = 200);
+
+                DB::table('articles')->insert([
+                    'title' => $title,
+                    'picture' => $picture,
+                    'content' => $content,
+                    'id_user'=>$i+1,
+                ]);
+            }
+
         }
+
        
     }
 }

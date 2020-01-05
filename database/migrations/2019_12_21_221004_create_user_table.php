@@ -22,6 +22,7 @@ class CreateUserTable extends Migration
             $table->string('remember_token',255)->nullable();
             $table->boolean('admin')->default(false);
 
+
         });
     }
 
