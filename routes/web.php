@@ -20,12 +20,12 @@ Route::get('/',function () {return view('welcome');});
 
 //show section
 Route::get('/articles', 'ArticlesController@show',function () {});
-Route::get('/articles/{title}', 'ArticlesController@showArticle',function () {});
+Route::get('/article/{title}', 'ArticleController@showArticle',function () {});
 
 
 //update section
-Route::get('/updateorcreatearticles/{id?}','ArticlesController@articleForm',function () {});
-Route::post('/updateorcreatearticles/{id?}','ArticlesController@createOrUpdate',function () {});
+Route::get('/updateorcreatearticles/{id?}','ArticleController@articleForm',function () {});
+Route::post('/updateorcreatearticles/{id?}','ArticleController@createOrUpdate',function () {});
 
 
 

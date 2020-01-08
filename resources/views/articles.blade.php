@@ -14,8 +14,10 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$article['title']}}</h5>
                         <p class="card-text">{{$article['content']}}</p>
-                        <a href="/articles/{{$article['title']}}" class="btn btn-primary">En savoir plus </a>
-                        <a href="updateorcreatearticles/{{$article['id']}}" class="btn btn-success">Modifier</a>
+                        <a href="/article/{{$article['title']}}" class="btn btn-primary">En savoir plus </a>
+                        @if($user)
+                            <a href="updateorcreatearticles/{{$article['id']}}" class="btn btn-success">Modifier</a>
+                        @endif
                     </div>
                 </div>
             @endforeach
