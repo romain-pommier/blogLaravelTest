@@ -2,7 +2,10 @@
 
 @section('content')
     <div class="container mt-5">
-    <a class="btn btn-primary" href='updateorcreatearticles'>Viens ajouter des articles !!!</a>
+        @if($user)
+            <a class="btn btn-primary" href='updateorcreatearticles'>Viens ajouter des articles !!!</a>
+        @endif
+
         <h1 class='text-center'>Voici les articles disponibles</h1>
         <div class='row'>
              @foreach ($articles as $article)

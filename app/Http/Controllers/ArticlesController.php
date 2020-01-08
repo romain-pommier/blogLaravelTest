@@ -17,7 +17,7 @@ class articlesController extends Controller
     {
         $articles = Article::get();
 
-        return view('articles',['articles' => $articles]);
+        return view('articles',['articles' => $articles,'user' => auth()->check()]);
     }
     public function showArticle()
     {
@@ -25,9 +25,8 @@ class articlesController extends Controller
 
         $article = \DB::table('articles')->where('title', $title)->first();
 
-//        dd($article->id_user);
         $user = \DB::table('users')->where('id',$article->id_user)->first();
-//        dd($user);
+
 
         return view('article',['article' => $article,
             'user' => $user]);
@@ -37,8 +36,6 @@ class articlesController extends Controller
     //---------------------------------------------------------------
     public function articleForm(Request $request, $id = null)
     {
-
-
         if($id){
            $article = Article::find($id);
         }
@@ -47,6 +44,7 @@ class articlesController extends Controller
         }
         return view('addArticles',['article' => $article]);
     }
+
     public function createOrUpdate(Request $request , $id = null)
     {
         $currentUser = Auth::user()->id;

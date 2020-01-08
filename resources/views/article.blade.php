@@ -1,6 +1,7 @@
 @extends('template')
 
 @section('content')
+
     <div class="jumbotron container mt-5">
         <h3 class=" text-center display-4">{{$article->title}}</h3>
         <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam debitis ex quisquam obcaecati deleniti, quis corrupti libero ullam quibusdam! Blanditiis voluptates ea obcaecati commodi saepe neque quasi vel nulla dolore.</p>
