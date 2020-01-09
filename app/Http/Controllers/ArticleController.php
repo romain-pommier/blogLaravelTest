@@ -41,16 +41,15 @@ class ArticleController extends Controller
 
     public function createOrUpdate(Request $request , $id = null)
     {
+
         $currentUser = Auth::user()->id;
 
-        $article = $id ===null ? new Article() : Article::find($id);
+        $article = $id === null ? new Article() : Article::find($id);
         $request['id_user'] = $currentUser;
 
         try{
 
             $article->fill($request->except(['_token']));
-//            $article->fill($request->user($currentUser));
-//            dd($request);
             $article->save();
             flash('Article '.$request['title'].' ajouter avec success' )->success();
 

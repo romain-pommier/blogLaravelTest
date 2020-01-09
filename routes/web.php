@@ -22,10 +22,15 @@ Route::get('/',function () {return view('welcome');});
 Route::get('/articles', 'ArticlesController@show',function () {})->name('articles');
 Route::get('/article/{title?}', 'ArticleController@showArticle',function () {})->name('article');
 
+//create section
+Route::get('/updateorcreatearticles','ArticleController@articleForm',function () {})->name('updateOrCreate');
+Route::post('/updateorcreatearticles','ArticleController@createOrUpdate',function (){});
 
 //update section
-Route::get('/updateorcreatearticles/{id?}','ArticleController@articleForm',function () {})->name('updateOrCreate');
+Route::get('/updateorcreatearticles/{id?}','ArticleController@articleForm',function () {})->name('updateOrCreate')->middleware('belongArticle');
 Route::post('/updateorcreatearticles/{id?}','ArticleController@createOrUpdate',function (){});
+
+
 
 
 

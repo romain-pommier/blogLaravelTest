@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class checkRole
+class CheckRole
 {
     /**
      * Handle an incoming request.
@@ -18,9 +18,9 @@ class checkRole
     {
         $currentUser = Auth::user();
         if($currentUser['id_role'] == intval($role) || $currentUser == null){
-             return redirect('home');
+            flash('Vous ne bénéficier pas suffisament de doits' )->success();
+            return redirect(url()->previous());
         }
-
         return $next($request);
     }
 }
