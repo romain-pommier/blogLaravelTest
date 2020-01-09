@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $faker = \Faker\Factory::create();
-//        for($i = 0; $i <= 15; $i++){
-//            $nbrArticles = random_int ( 2 , 8 );
-//
-//        }
+
+        dump('-----------------------USER----------------------------');
+
+
         for($i =0; $i <= 9; $i++){
             $username = $faker->userName;
             $userMail = $faker->freeEmail;
@@ -27,13 +27,16 @@ class DatabaseSeeder extends Seeder
             dump($username . ' ' .$userMail.' '.$password.' '.$updateTime);
 
             $created_at = $updateTime;
+
             DB::table('users')->insert([
                 'name' => $username,
                 'email' => $userMail,
-                'password' => $password,
+                'password' => password_hash($password, PASSWORD_DEFAULT),
                 'updated_at' =>$updateTime,
                 'created_at' => $created_at,
+                'id_role' => 1
             ]);
+
             $nombreRandom = mt_rand(0, 5);
             for($y = 0; $y <= $nombreRandom; $y++){
                 $title = $faker->word;
@@ -47,9 +50,27 @@ class DatabaseSeeder extends Seeder
                     'id_user'=>$i+1,
                 ]);
             }
+            $roles = ['auteur','admin'];
+        }
+        dump('--------------ADMIN--------------------');
+        DB::table('users')->insert([
+            'name' => 'romain',
+            'email' => 'romain-p31@hotmail.fr',
+            'password' => password_hash("$password", PASSWORD_DEFAULT),
+            'updated_at' =>$updateTime,
+            'created_at' => $created_at,
+            'id_role' => 2
+        ]);
 
+
+        dump('-----------------------ROLES----------------------------');
+        for($x = 0; $x < count($roles); $x++){
+            dump($roles[$x]);
+            DB::table('role')->insert([
+                'role_name' => $roles[$x],
+            ]);
         }
 
-       
+
     }
 }

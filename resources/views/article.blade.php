@@ -10,9 +10,7 @@
         <img height="350px" class="col-6" width="250px" src="{{$article->picture}}"  alt="randomPicture">
         <p class="col-6">{{$article->content}}</p>
         </div>
-        @if($currentUser)
-            <a href="../updateorcreatearticles/{{$article->id}}" class="btn btn-success mt-3">Modifier</a>
-        @endif
+        <a href="{{route('updateOrCreate')}}/{{$article->id}}" class="btn btn-success mt-3">Modifier</a>
         <p>Créer par <strong>{{$user->name}}</strong> </p>
     </div>
 @endsection;

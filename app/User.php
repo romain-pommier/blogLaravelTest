@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'id_role'
     ];
 
     /**
@@ -40,5 +40,9 @@ class User extends Authenticatable
     public function articles()
     {
         return $this->hasMannny('App\Article');
+    }
+    public function hasRole($role)
+    {
+        return User::where('id_role', intval($role))->get();
     }
 }

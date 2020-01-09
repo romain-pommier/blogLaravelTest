@@ -2,10 +2,7 @@
 
 @section('content')
     <div class="container mt-5">
-        @if($user)
-            <a class="btn btn-primary" href='updateorcreatearticles'>Viens ajouter des articles !!!</a>
-        @endif
-
+        <a class="btn btn-primary" href='{{route('updateOrCreate')}}'>Viens ajouter des articles !!!</a>
         <h1 class='text-center'>Voici les articles disponibles</h1>
         <div class='row'>
              @foreach ($articles as $article)
@@ -14,10 +11,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{$article['title']}}</h5>
                         <p class="card-text">{{$article['content']}}</p>
-                        <a href="/article/{{$article['title']}}" class="btn btn-primary">En savoir plus </a>
-                        @if($user)
-                            <a href="updateorcreatearticles/{{$article['id']}}" class="btn btn-success">Modifier</a>
-                        @endif
+                        <a href="{{route('article')}}/{{$article['title']}}" class="btn btn-primary">En savoir plus </a>
+                        <a href="{{route('updateOrCreate')}}/{{$article['id']}}" class="btn btn-success">Modifier</a>
+
                     </div>
                 </div>
             @endforeach
