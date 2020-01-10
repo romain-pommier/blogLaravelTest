@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Article;
+use App\Comment;
+use App\User;
+use Illuminate\Support\Facades\App;
 use function auth;
 use function flash;
 use Illuminate\Http\Request;
@@ -16,14 +20,17 @@ class ArticleController extends Controller
     public function showArticle()
     {
         $title = request('title');
+        $article = Article::where('title', $title)->first();
+        $user = $article->user;
+        $comments = $article->comments;
 
-        $article = \DB::table('articles')->where('title', $title)->first();
-
-        $user = \DB::table('users')->where('id',$article->id_user)->first();
-
-
-        return view('article',['article' => $article,
-            'user' => $user, 'currentUser' => auth()->check()]);
+        return view('article',[
+            'article' => $article,
+            'user' => $user,
+            'currentUser' => auth()->check(),
+            'comments' => $comments
+            ]
+        );
 
     }
     //    -----------------------------UPDATE-------------------------
@@ -67,5 +74,22 @@ class ArticleController extends Controller
     {
 
         return view('addArticles');
+    }
+    //    ---------------------------DELETE-------------------------
+//---------------------------------------------------------------
+    public function delete(Request $resquest, $id){
+        $articleDelete = Article::find($id);
+
+        try{
+            $articleDelete->delete();
+            return redirect()->action( 'ArticlesController@show');
+            flash('Article '.$request['title'].' supprimer avec success' )->success();
+        }
+        catch(\Illuminate\Database\QueryException $ex){
+            flash('Articles supprimer avec success');
+
+        }
+
+
     }
 }

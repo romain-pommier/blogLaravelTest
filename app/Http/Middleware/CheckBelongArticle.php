@@ -19,17 +19,11 @@ class CheckBelongArticle
      */
     public function handle($request, Closure $next)
     {
-//        if(Route::current()->parameters() == null){
-//            dd('null');
-//        }
-//        else{
-//            dd('is ok');
-//        }
-
         $idArticle = Route::current()->parameters();
         $currentIdUser = Auth::user();
 
-        $articleSelect = intval(DB::table('articles')->where('id', $idArticle)->first()->id_user);
+//      $articleSelect = intval(DB::table('articles')->where('id', $idArticle)->first()->id_user);
+        $articleSelect = Article::where('id',$idArticle)->first()->id_user;
 
         if($articleSelect != null){
             if($articleSelect != $currentIdUser['id']){

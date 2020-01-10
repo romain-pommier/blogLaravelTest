@@ -30,9 +30,15 @@ Route::post('/updateorcreatearticles','ArticleController@createOrUpdate',functio
 Route::get('/updateorcreatearticles/{id?}','ArticleController@articleForm',function () {})->name('updateOrCreate')->middleware('belongArticle');
 Route::post('/updateorcreatearticles/{id?}','ArticleController@createOrUpdate',function (){});
 
+//delete section
+Route::get('/delete/{id?}', 'ArticleController@delete', function (){})->name('delete');
 
 
+//create commentaire
+Route::post('/article/{title?}', 'CommentController@addComment', function (){})->name('createComment');
 
+//profile
+Route::get('/profile', 'ProfilController@showProfil', function (){})->name('profil');
 
 Auth::routes();
 

@@ -13,6 +13,7 @@
                         <p class="card-text">{{$article['content']}}</p>
                         <a href="{{route('article')}}/{{$article['title']}}" class="btn btn-primary">En savoir plus </a>
                         <a href="{{route('updateOrCreate')}}/{{$article['id']}}" class="btn btn-success">Modifier</a>
+                        <a href="{{route('delete')}}/{{$article['id']}}" class="btn btn-danger">Supprimer</a>
 
                     </div>
                 </div>
