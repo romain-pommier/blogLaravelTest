@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function articles()
     {
-        return $this->hasMany('App\Article', 'id_user', 'id');
+        return $this->hasMany('App\Article');
     }
 
     public function writingsComments()
@@ -59,7 +59,7 @@ class User extends Authenticatable
 
     public function articleComment()
     {
-        return $this->hasManyThrough('App\Comment', 'App\Article','user_id', 'id');
+        return $this->hasManyThrough('App\Comment', 'App\Article');
     }
 
 

@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
                     'title' => $title,
                     'picture' => $picture,
                     'content' => $content,
-                    'id_user'=>$i+1,
+                    'user_id'=>$i+1,
                 ]);
             }
             $roles = ['auteur','admin'];
@@ -68,6 +68,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'romain',
             'email' => 'romain-p31@hotmail.fr',
             'password' => password_hash("$password", PASSWORD_DEFAULT),
+            'avatar' => 'https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Alien-512.png',
             'updated_at' =>$updateTime,
             'created_at' => $created_at,
             'id_role' => 2
