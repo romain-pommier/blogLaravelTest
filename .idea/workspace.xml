@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c3884f1-c1e4-41b5-85d9-02cb40715dcc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/profil.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckBelongArticle.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckBelongArticle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/article.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/article.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/articles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_20_094401_ajout_parametre.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_20_094401_ajout_parametre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profil.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +171,7 @@
       <workItem from="1578573838305" duration="6913000" />
       <workItem from="1578580764545" duration="3928000" />
       <workItem from="1578645113213" duration="3510000" />
-      <workItem from="1578651329242" duration="16693000" />
+      <workItem from="1578651329242" duration="18964000" />
     </task>
     <servers />
   </component>

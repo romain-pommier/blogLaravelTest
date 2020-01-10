@@ -26,7 +26,7 @@
     </div>
     <h2 class="mb-5">Voici tous vos commentaires:</h2>
     <div class=" row commentsUser">
-        @foreach($user->comments as $comment)
+        @foreach($user->writingsComments as $comment)
             <div class="mt-5 col-4 ">
                 <h4>{{$comment['title']}}</h4>
                     <div class=""><p>{{$comment['content']}}</p></div>
@@ -40,6 +40,10 @@
         @endforeach
 
     </div>
+    @foreach($user->articleComment as $comment)
+        {{dump($comment)}}
+        <p>{{$comment}}</p>
+    @endforeach
 
     <h2 class="mt-5">Modifie ton profile ici !!!!!!</h2>
 

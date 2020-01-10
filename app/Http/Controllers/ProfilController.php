@@ -10,12 +10,8 @@ class ProfilController extends Controller
     public function showProfil(){
         $user = User::find(auth()->id());
 
-        $allArticles = $user->articles;
+        dump($user->articleComment);
 
-        $allComments = $user->comments;
-
-
-//        dd($user, $user->comments);
 
         return view('profil',['user' => $user]);
 

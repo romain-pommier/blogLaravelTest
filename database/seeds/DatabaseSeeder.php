@@ -18,8 +18,18 @@ class DatabaseSeeder extends Seeder
 
         dump('-----------------------USER----------------------------');
 
+        $genres = ['male', 'female'];
 
         for($i =0; $i <= 9; $i++){
+            $genre = $faker->randomElement($genres);
+            $picture = 'https://randomuser.me/api/portraits/';
+            $pictureId = $faker->numberBetween(1,99) . '.jpg';
+            if($genre == "male"){
+                $picture .= "men/".$pictureId;
+            }
+            else{
+                $picture .=  "women/".$pictureId;
+            }
             $username = $faker->userName;
             $userMail = $faker->freeEmail;
             $password = '12345678';
@@ -29,9 +39,10 @@ class DatabaseSeeder extends Seeder
             $created_at = $updateTime;
 
             DB::table('users')->insert([
-                'name' => $username,
+                'name' => $faker->firstName($genre),
                 'email' => $userMail,
                 'password' => password_hash($password, PASSWORD_DEFAULT),
+                'avatar' => $picture,
                 'updated_at' =>$updateTime,
                 'created_at' => $created_at,
                 'id_role' => 1

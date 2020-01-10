@@ -52,10 +52,20 @@ class User extends Authenticatable
         return $this->hasMany('App\Article', 'id_user', 'id');
     }
 
-    public function comments()
+    public function writingsComments()
     {
         return $this->hasMany('App\Comment');
     }
+
+    public function articleComment()
+    {
+        return $this->hasManyThrough('App\Comment', 'App\Article','user_id', 'id');
+    }
+
+
+
+
+
 
     public function hasRole($role)
     {
