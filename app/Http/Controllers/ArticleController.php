@@ -52,11 +52,10 @@ class ArticleController extends Controller
         $currentUser = Auth::user()->id;
 
         $article = $id === null ? new Article() : Article::find($id);
-        $request['id_user'] = $currentUser;
-
+        $request['user_id'] = $currentUser;
         try{
-
             $article->fill($request->except(['_token']));
+
             $article->save();
             flash('Article '.$request['title'].' ajouter avec success' )->success();
 

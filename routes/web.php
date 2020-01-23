@@ -20,7 +20,7 @@ Route::get('/',function () {return view('welcome');});
 
 //show section
 Route::get('/articles', 'ArticlesController@show',function () {})->name('articles');
-Route::get('/article/{title?}', 'ArticleController@showArticle',function () {})->name('article');
+Route::get('/article/{title?}', 'ArticleController@showArticle',function () {})->name('article')->middleware('role:2');
 
 //create section
 Route::get('/updateorcreatearticles','ArticleController@articleForm',function () {})->name('updateOrCreate');
@@ -39,6 +39,7 @@ Route::post('/article/{title?}', 'CommentController@addComment', function (){})-
 
 //profile
 Route::get('/profile', 'ProfilController@showProfil', function (){})->name('profil');
+Route::post('/profile', 'ProfilController@setProfil', function (){});
 
 Auth::routes();
 

@@ -47,7 +47,8 @@
 
     <h2 class="mt-5">Modifie ton profile ici !!!!!!</h2>
 
-    <form action="" method="POST">
+    <form action="" method="post" enctype="multipart/form-data">
+        @csrf
         <div class="row">
             <div class="col-4">
                 <label for="name">Nom:</label>

@@ -9,7 +9,7 @@ class Article extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['title', 'picture', 'content', 'id_user'];
+    protected $fillable = ['title', 'picture', 'content', 'user_id'];
 
     protected $with = ['user'];
 
@@ -18,6 +18,6 @@ class Article extends Model
     }
 
     public function user(){
-        return $this->belongsTo(User::class, 'id_user', 'id');
+        return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }
