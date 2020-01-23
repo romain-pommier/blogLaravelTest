@@ -18,7 +18,7 @@ class CheckRole
     {
         $currentUser = Auth::user();
         if($currentUser['id_role'] == intval($role) || $currentUser == null){
-            flash('Vous ne bénéficier pas suffisament de doits' )->warning();
+            flash('Vous ne bénéficier pas suffisament de doits' )->error();
             return redirect(url()->previous());
         }
         return $next($request);

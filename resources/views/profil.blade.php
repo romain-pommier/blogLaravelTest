@@ -66,7 +66,7 @@
                 <input type="file" class="form-control" placeholder="avatar" name='avatar' value="{{$user->email}}">
             </div>
             <div class="col-4">
-                <img src="{{$user->avatar}}">
+                <img src="{{$user->avatar}}" height="300px" width="300px">
             </div>
         </div>
         <div class="row">

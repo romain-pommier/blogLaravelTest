@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7c3884f1-c1e4-41b5-85d9-02cb40715dcc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Article.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckRole.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckRole.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profil.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/template.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,6 +131,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storage/app/public/userAvatar" />
+      <recent name="$PROJECT_DIR$/storage/app/public" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -176,6 +179,7 @@
       <workItem from="1578651329242" duration="18964000" />
       <workItem from="1578681158827" duration="77000" />
       <workItem from="1578681862814" duration="290000" />
+      <workItem from="1579782989379" duration="4984000" />
     </task>
     <servers />
   </component>
@@ -196,19 +200,19 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="484" y="188" width="1022" height="737" key="SettingsEditor/70.27.1850.1053@70.27.1850.1053" timestamp="1578580752633" />
-    <state x="649" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1578681910001">
+    <state x="649" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1579782994700">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="501" y="252" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1576849150478" />
-    <state x="649" y="336" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1578681910001" />
+    <state x="649" y="336" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1579782994700" />
     <state x="800" y="0" width="800" height="860" key="dock-window-1" timestamp="1576849386304">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="800" y="0" width="800" height="860" key="dock-window-1/0.0.1600.860@0.0.1600.860" timestamp="1576849386304" />
-    <state x="720" y="385" width="540" height="343" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1579777506196">
+    <state x="720" y="385" width="540" height="343" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1579787286319">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="720" y="385" width="540" height="343" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1579777506196" />
+    <state x="720" y="385" width="540" height="343" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1579787286319" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

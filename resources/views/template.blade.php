@@ -15,7 +15,7 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-2">
             <a class="navbar-brand" href="/">HOME</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -46,6 +46,8 @@
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
+                                <img src="{{Auth::user()->avatar}}" alt="" height="70px" width="70px" style="border-radius: 50%">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
