@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use App\Comment;
+use App\Tag;
 use App\User;
 use Illuminate\Support\Facades\App;
 use function auth;
@@ -49,13 +50,36 @@ class ArticleController extends Controller
     public function createOrUpdate(Request $request , $id = null)
     {
 
+//        faire condition pour l'ajout de tag pendant l'ajout d'article
+
         $currentUser = Auth::user()->id;
-
         $article = $id === null ? new Article() : Article::find($id);
-        $request['user_id'] = $currentUser;
-        try{
-            $article->fill($request->except(['_token']));
+        if($request->tags != null) {
 
+
+            foreach ($request->tags as $tag) {
+                if(Tag::where('name', $tag)->first()){
+                   $currentTag = new Tag();
+                   dd($currentTag);
+                }
+                else{
+                    $currentTag = Tag::where('name', $tag)->first();
+                    dd($currentTag);
+                }
+                dump($tag, Tag::where('name', $tag)->first());
+                $currentTag = $tag === null ? new Tag() : Tag::where('name', $tag)->first();
+                dd($currentTag, $article);
+                $currentTag->fill(['name' => $tag]);
+                $currentTag->save();
+            }
+        }
+
+
+
+        $request['user_id'] = $currentUser;
+//        die();
+        try{
+            $article->fill($request->except(['_token','tags']));
             $article->save();
             flash('Article '.$request['title'].' ajouter avec success' )->success();
 

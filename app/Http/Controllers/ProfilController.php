@@ -19,6 +19,7 @@ class ProfilController extends Controller
     public function setProfil(Request $request){
         $user = Auth::user();
         $request['user_id'] = $user;
+        $contact = new ContactController();
         if($request->file('avatar') == null){
             flash('Merci de choisir un avatar')->error();
         }

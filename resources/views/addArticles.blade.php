@@ -21,7 +21,15 @@
             </div>
             <div class="row">
                 <div class="col-6 mt-3">
-                    <textarea name="content" id="" cols="50" rows="10" placeholder='Indique le contenue de ton article' >{{$article->content}}</textarea>
+                    <textarea name="content" class="col-6" id="" cols="50" rows="10" placeholder='Indique le contenue de ton article' >{{$article->content}}</textarea>
+                </div>
+                <div class="col-6" id="tags">
+                    <input type="hidden" value="0">
+                    <div class="row"> <h7>Ajouter un tag</h7>
+                        <button type="button" class="btn btn-primary" id="add-tag">
+                            <i class="fas fa-hashtag"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -37,4 +45,5 @@
         </form>
 
     </div>
+
 @endsection

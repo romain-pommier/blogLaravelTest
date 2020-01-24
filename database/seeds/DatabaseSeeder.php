@@ -16,11 +16,13 @@ class DatabaseSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
 
+        $newUtil = $faker->userAgent();
+
         dump('-----------------------USER----------------------------');
 
         $genres = ['male', 'female'];
 
-        for($i =0; $i <= 9; $i++){
+        for($i = 0; $i <= 9; $i++){
             $genre = $faker->randomElement($genres);
             $picture = 'https://randomuser.me/api/portraits/';
             $pictureId = $faker->numberBetween(1,99) . '.jpg';

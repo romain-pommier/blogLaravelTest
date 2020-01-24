@@ -48,9 +48,10 @@
             </div>
             <div class="row">
                 <input type="hidden" name="id" value="{{$article['id']}}">
-                <div class="col mt-5">
+                <div class="col-6 mt-5">
                     <input type="submit" name="create" class='btn btn-success'>
                 </div>
+
             </div>
 
         </form>
