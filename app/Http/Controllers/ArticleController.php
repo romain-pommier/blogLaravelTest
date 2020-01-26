@@ -49,37 +49,27 @@ class ArticleController extends Controller
 
     public function createOrUpdate(Request $request , $id = null)
     {
-
-//        faire condition pour l'ajout de tag pendant l'ajout d'article
-
+//        je ne comprend pas ce que fait eloquent tout seul ou ce que moi je dois faire
+//        dois-je implementer la table relationnel taggable manuellement ???
         $currentUser = Auth::user()->id;
         $article = $id === null ? new Article() : Article::find($id);
-        if($request->tags != null) {
-
-
+//        dd(($article));
+        if($request->tags != null){
             foreach ($request->tags as $tag) {
-                if(Tag::where('name', $tag)->first()){
-                   $currentTag = new Tag();
-                   dd($currentTag);
+                $currentTag = Tag::where('name',$tag)->first();
+                if ($currentTag == null){
+                    $currentTag = new Tag();
                 }
-                else{
-                    $currentTag = Tag::where('name', $tag)->first();
-                    dd($currentTag);
-                }
-                dump($tag, Tag::where('name', $tag)->first());
-                $currentTag = $tag === null ? new Tag() : Tag::where('name', $tag)->first();
-                dd($currentTag, $article);
+
                 $currentTag->fill(['name' => $tag]);
                 $currentTag->save();
+//                $currentTag->save()->articles()->sync($id); ?????????????????????????
             }
         }
-
-
-
         $request['user_id'] = $currentUser;
-//        die();
         try{
-            $article->fill($request->except(['_token','tags']));
+            $article->fill($request->except(['_token']));
+
             $article->save();
             flash('Article '.$request['title'].' ajouter avec success' )->success();
 
