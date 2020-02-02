@@ -49,27 +49,28 @@ class ArticleController extends Controller
 
     public function createOrUpdate(Request $request , $id = null)
     {
-//        je ne comprend pas ce que fait eloquent tout seul ou ce que moi je dois faire
-//        dois-je implementer la table relationnel taggable manuellement ???
         $currentUser = Auth::user()->id;
         $article = $id === null ? new Article() : Article::find($id);
-//        dd(($article));
+
+//       AJOUT ET SAUVEGARDE DES TAGS PLUS INCRÉMENTATION D'UN TABLEAU D'ID DE TAG
         if($request->tags != null){
+            $arrayIdTags = [];
             foreach ($request->tags as $tag) {
                 $currentTag = Tag::where('name',$tag)->first();
                 if ($currentTag == null){
                     $currentTag = new Tag();
                 }
-
                 $currentTag->fill(['name' => $tag]);
                 $currentTag->save();
-//                $currentTag->save()->articles()->sync($id); ?????????????????????????
+                array_push($arrayIdTags,$currentTag->id);
             }
         }
+
+//      AJOUT D'UN ARTICLE + SYNC AVEC LES TABLEAU D'ID DES TAGS
         $request['user_id'] = $currentUser;
         try{
             $article->fill($request->except(['_token']));
-
+            $article->tags()->sync($arrayIdTags);
             $article->save();
             flash('Article '.$request['title'].' ajouter avec success' )->success();
 
