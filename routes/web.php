@@ -25,15 +25,15 @@ Route::get('/utilisateurs', 'UserController@showUser')->name('showUser');
 Route::get('/tags', 'TagController@showTags')->name('showTags');
 
 //create section
-Route::get('/updateorcreatearticles','ArticleController@articleForm')->name('updateOrCreate');
+Route::get('/updateorcreatearticles','ArticleController@articleForm')->name('updateOrCreate')->middleware('connected');
 Route::post('/updateorcreatearticles','ArticleController@createOrUpdate');
 
 //update section
-Route::get('/updateorcreatearticles/{id?}','ArticleController@articleForm',function () {})->name('updateOrCreate')->middleware('belongArticle')->middleware('auth.basic');
+Route::get('/updateorcreatearticles/{id?}','ArticleController@articleForm',function () {})->name('updateOrCreate')->middleware('connected');
 Route::post('/updateorcreatearticles/{id?}','ArticleController@createOrUpdate',function (){});
 
 //delete section
-Route::get('/delete/{id?}', 'ArticleController@delete', function (){})->name('delete')->middleware('auth.basic');
+Route::get('/delete/{id?}', 'ArticleController@delete', function (){})->name('delete')->middleware('auth');
 
 
 //create commentaire

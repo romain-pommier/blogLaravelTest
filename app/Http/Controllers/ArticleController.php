@@ -8,6 +8,7 @@ use App\Comment;
 use App\Tag;
 use App\User;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Validator;
 use function auth;
 use function flash;
 use Illuminate\Http\Request;
@@ -53,8 +54,25 @@ class ArticleController extends Controller
         $article = $id === null ? new Article() : Article::find($id);
 
 //       AJOUT ET SAUVEGARDE DES TAGS PLUS INCRÉMENTATION D'UN TABLEAU D'ID DE TAG
+
+
+
+
+
+//        $validator = Validator::make($request->all(), [
+//            'title' => 'required|unique:articles|max:2',
+//            'picture' => 'required',
+//        ]);
+//
+//        if ($validator->fails()) {
+//            return redirect('updateorcreatearticles')
+//                ->withErrors($validator)
+//                ->withInput();
+//        }
+
+        $arrayIdTags = [];
         if($request->tags != null){
-            $arrayIdTags = [];
+
             foreach ($request->tags as $tag) {
                 $currentTag = Tag::where('name',$tag)->first();
                 if ($currentTag == null){
