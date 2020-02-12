@@ -26,10 +26,46 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+//
+// const app = new Vue({
+//     el: '#app',
+// });
+//
 
-const app = new Vue({
-    el: '#app',
+
+
+let count = 0;
+$('#add-tag').click(function(){
+    count++;
+    addInputOnClick('#tags')
 });
+
+function addInputOnClick(target){
+    let tagClassName = "inputTag_" + count
+    //Injection du code dans la div
+    $(target).append('<div class="'+tagClassName+' mb-3">' +
+        '<input type="text" placeholder="Nom du tags" name="tags[]" > ' +
+        '<button type="button" data-action="delete" data-count ="'+tagClassName+'" data-target=".inputTag" class="btn btn-danger">X</button>' +
+        '</div>')
+
+    //Initialisation fonction suppression
+    handleDeleteButtons();
+
+}
+
+function handleDeleteButtons(){
+    $('button[data-action = "delete"]').click(function(){
+        let currentTarget = '.'+$(this).data('count');
+        $(currentTarget).remove()
+    })
+}
+
+
+
+
+handleDeleteButtons();
+
+
 
 
 

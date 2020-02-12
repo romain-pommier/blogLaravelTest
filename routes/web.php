@@ -19,14 +19,14 @@ Route::get('/',function () {return view('welcome');});
 
 
 //show section
-Route::get('/articles', 'ArticlesController@show',function () {})->name('articles');
-Route::get('/article/{title?}', 'ArticleController@showArticle',function () {})->name('article');
-Route::get('/utilisateurs', 'UserController@showUser', function(){})->name('showUser');
-Route::get('/tags', 'TagController@showTags', function(){})->name('showTags');
+Route::get('/articles', 'ArticlesController@show')->name('articles');
+Route::get('/article/{title?}', 'ArticleController@showArticle')->name('article');
+Route::get('/utilisateurs', 'UserController@showUser')->name('showUser');
+Route::get('/tags', 'TagController@showTags')->name('showTags');
 
 //create section
-Route::get('/updateorcreatearticles','ArticleController@articleForm',function () {})->name('updateOrCreate');
-Route::post('/updateorcreatearticles','ArticleController@createOrUpdate',function (){});
+Route::get('/updateorcreatearticles','ArticleController@articleForm')->name('updateOrCreate');
+Route::post('/updateorcreatearticles','ArticleController@createOrUpdate');
 
 //update section
 Route::get('/updateorcreatearticles/{id?}','ArticleController@articleForm',function () {})->name('updateOrCreate')->middleware('belongArticle')->middleware('auth.basic');
@@ -37,7 +37,7 @@ Route::get('/delete/{id?}', 'ArticleController@delete', function (){})->name('de
 
 
 //create commentaire
-Route::post('/article/{title?}', 'CommentController@addComment', function (){})->name('createComment');
+Route::post('/article/{title?}', 'CommentController@addComment')->name('createComment');
 
 //profile
 Route::get('/profile', 'ProfilController@showProfil', function (){})->name('profil');

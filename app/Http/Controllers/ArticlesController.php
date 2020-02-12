@@ -16,7 +16,6 @@ class articlesController extends Controller
     public function show()
     {
         $articles = Article::get();
-
         return view('articles',['articles' => $articles,'user' => auth()->check()]);
     }
 

@@ -86,42 +86,9 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="js/app.js"></script>
         <script>$('#flash-overlay-modal').modal()</script>
 
 
-        <script>
-            let count = 0;
-            $('#add-tag').click(function(){
-                count++;
-                addInputOnClick('#tags')
-            });
-
-            function addInputOnClick(target){
-                console.log(count)
-                let tagClassName = "inputTag_" + count
-                //Injection du code dans la div
-                $(target).append('<div class="'+tagClassName+' mb-3">' +
-                    '<input type="text" placeholder="Nom du tags" name="tags[]" > ' +
-                    '<button type="button" data-action="delete" data-count ="'+tagClassName+'" data-target=".inputTag" class="btn btn-danger">X</button>' +
-                    '</div>')
-
-                //Initialisation fonction suppression
-                handleDeleteButtons();
-
-            }
-
-            function handleDeleteButtons(){
-                $('button[data-action = "delete"]').click(function(){
-                    let currentTarget = '.'+$(this).data('count');
-                    $(currentTarget).remove()
-                })
-            }
-
-
-
-
-            handleDeleteButtons();
-
-        </script>
     </body>
 </html>
