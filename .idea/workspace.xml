@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c3884f1-c1e4-41b5-85d9-02cb40715dcc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/routes/apiTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ArticlesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_10_151108_ajout_colonne_avatar_for_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_10_151108_ajout_colonne_avatar_for_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/articles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/articles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,6 +199,7 @@
       <workItem from="1581324200065" duration="626000" />
       <workItem from="1581539420066" duration="4023000" />
       <workItem from="1581581828515" duration="13045000" />
+      <workItem from="1581606054458" duration="4453000" />
     </task>
     <servers />
   </component>
@@ -239,12 +230,12 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="484" y="188" width="1022" height="737" key="SettingsEditor/70.27.1850.1053@70.27.1850.1053" timestamp="1578580752633" />
-    <state x="649" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1581581829339">
+    <state x="649" y="336" key="com.intellij.ide.util.TipDialog" timestamp="1581606054982">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="501" y="252" key="com.intellij.ide.util.TipDialog/0.0.1600.860@0.0.1600.860" timestamp="1576849150478" />
     <state x="649" y="317" key="com.intellij.ide.util.TipDialog/0.1080.1920.1080/70.0.1850.1080@70.0.1850.1080" timestamp="1580805594187" />
-    <state x="649" y="336" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1581581829339" />
+    <state x="649" y="336" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1581606054982" />
     <state x="800" y="0" width="800" height="860" key="dock-window-1" timestamp="1576849386304">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
