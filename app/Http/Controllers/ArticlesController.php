@@ -15,9 +15,25 @@ class articlesController extends Controller
     //---------------------------------------------------------------
     public function show()
     {
-        $articles = Article::get();
-        return view('articles',['articles' => $articles,'user' => auth()->check()]);
+
+        $token = Auth::user()->api_token;
+        $request = new Request();
+
+        $client = new \GuzzleHttp\Client();
+
+        $response = $client->request('POST', 'http://www.bloglaraveltest.com/apitest/articles', [
+            'headers' => [
+                'Accept' => 'application/json',
+            ],
+            'form_params' => [
+                'api_token' => $token,
+            ],
+        ]);
+//        dd(json_decode($response->getBody()));
+//        return view('articles',['articles' => $articles,'user' => auth()->check()]);
+        return view('articles',['articles' => json_decode($response->getBody()),'user' => auth()->check()]);
     }
+
 
 
 

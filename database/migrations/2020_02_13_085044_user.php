@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AjoutColonneAvatarForUser extends Migration
+class User extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,13 @@ class AjoutColonneAvatarForUser extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('avatar')
-                ->nullable(true);
+           $table->string('api_token', 80)->after('password')
+               ->unique()
+               ->nullable()
+               ->default(null);
+
         });
+
     }
 
     /**

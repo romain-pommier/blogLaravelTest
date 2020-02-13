@@ -51,7 +51,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'connected' => \App\Http\Middleware\isConnected::class,
+        'isConnected' => \App\Http\Middleware\isConnected::class,
         'role' => \App\Http\Middleware\CheckRole::class,
         'belongArticle' => \App\Http\Middleware\CheckBelongArticle::class,
         'auth' => \App\Http\Middleware\Authenticate::class,

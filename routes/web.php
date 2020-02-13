@@ -19,17 +19,17 @@ Route::get('/',function () {return view('welcome');});
 
 
 //show section
-Route::get('/articles', 'ArticlesController@show')->name('articles');
+Route::get('/articles', 'ArticlesController@show')->name('articles')->middleware('isConnected');
 Route::get('/article/{title?}', 'ArticleController@showArticle')->name('article');
 Route::get('/utilisateurs', 'UserController@showUser')->name('showUser');
 Route::get('/tags', 'TagController@showTags')->name('showTags');
 
 //create section
-Route::get('/updateorcreatearticles','ArticleController@articleForm')->name('updateOrCreate')->middleware('connected');
+Route::get('/updateorcreatearticles','ArticleController@articleForm')->name('updateOrCreate')->middleware('isConnected');
 Route::post('/updateorcreatearticles','ArticleController@createOrUpdate');
 
 //update section
-Route::get('/updateorcreatearticles/{id?}','ArticleController@articleForm',function () {})->name('updateOrCreate')->middleware('connected');
+Route::get('/updateorcreatearticles/{id?}','ArticleController@articleForm',function () {})->name('updateOrCreate')->middleware('isConnected');
 Route::post('/updateorcreatearticles/{id?}','ArticleController@createOrUpdate',function (){});
 
 //delete section

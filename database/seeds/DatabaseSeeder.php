@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use \Faker\Factory;
 use \Faker\Provider\DateTime;
+use Illuminate\Support\Str;
 
 
 class DatabaseSeeder extends Seeder
@@ -45,6 +46,7 @@ class DatabaseSeeder extends Seeder
                 'email' => $userMail,
                 'password' => password_hash($password, PASSWORD_DEFAULT),
                 'avatar' => $picture,
+                'api_token' => Str::random(60),
                 'updated_at' =>$updateTime,
                 'created_at' => $created_at,
                 'id_role' => 1
